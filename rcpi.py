@@ -1,3 +1,7 @@
+#Script to control servos with a joystick on an raspberry pi
+#@author: ralbra
+#@license: GPLV3 
+
 from time import sleep
 import pygame
 import sys
