@@ -1,9 +1,9 @@
-#RCPi
+# RCPi
 
 This project aims to control your RC car, plane, boat or whatever with a standard PS3 controller and a raspi zerow or Raspi 3. Actually it would work with any wireless controller that is supported by rasbian but i will concentrate on the ps3 controller because I only got this.
 
-#Install
-##0. Prequisite
+# Install
+## 0. Prequisite
 I Assume u are on the latest version of raspbian (stretch atm)
 I recommend using the raspbian stretch lite version
 
@@ -11,7 +11,7 @@ Install some stuff:
 `sudo apt-get -y install bluez bluez-cups bluez-hcidump bluez-tools bluez-firmware checkinstall libusb-dev libbluetooth-dev`
 
 `sudo apt-get install git joystick pkg-config`
-##1. Connect PS3 Controller
+## 1. Connect PS3 Controller
 
 ```
 cd ~
@@ -60,7 +60,7 @@ to test connection, get axis and button numbering
 `jstest /dev/input/js0`
 
 	
-##2. Install pigpio
+## 2. Install pigpio
 
 ```
 wget abyz.me.uk/rpi/pigpio/pigpio.zip
@@ -70,7 +70,7 @@ make
 sudo make install
 ```
 
-##3. Programming
+## 3. Programming
 
 `sudo apt-get -y install python-pygame`
 You always have to make sure pigpiod service runs before starting up the code. Start rcpi like any other Python program.
@@ -83,7 +83,7 @@ sudo python rcpi.py
 Eventually usefull for testing controller reconnect:
 `sudo invoke-rc.d bluetooth restart`
 
-##4. Autostart 
+## 4. Autostart 
 
 `sudo nano /etc/rc.local`
 insert before exit 0
@@ -91,7 +91,7 @@ insert before exit 0
 pigpiod &
 python /home/pi/rcpi.py &
 ```
-##5. Make SD-Card read only
+## 5. Make SD-Card read only
 well we want to make our pi to be plug and play and more importantly unplug
 so to not damage the sd card we should make it read only
 
