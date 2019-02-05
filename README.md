@@ -15,6 +15,7 @@ Install some stuff:
 `sudo apt-get install git joystick pkg-config`
 ## 1. Connect PS3 Controller
 
+Firstly we need a tool tool to pair the controller:
 ```
 cd ~
 wget http://www.pabr.org/sixlinux/sixpair.c
@@ -26,6 +27,7 @@ now connect ps3 controller via usb
 `sudo reboot`
 
 wait, login and:
+
 `sudo ~/sixpair`
 
 Something like this should come up
@@ -36,6 +38,9 @@ Something like this should come up
 Now disconnect controller.
 
 Bluetooth connection RetroPie sixad variant:
+
+Secondly install sixad to connect to the controller:
+
 ```
 cd ~
 git clone https://github.com/RetroPie/sixad.git
@@ -46,19 +51,33 @@ sudo checkinstall
 ```
 
 to make sure stop the demaon
+
 `sudo sixad --stop`
+
 and then start again
+
 `sudo sixad --start`
-now press the PS button on your controller
-short rumble and the "1" LED should light up after a few seconds
+
+Now press the PS button on your controller.
+
+After a short rumble and the "1" LED should light up after a few seconds.
+
+Lets put the deamon in autostart:
+
 `sudo cp sixad /etc/init.d/`
+
 `sudo update-rc.d sixad defaults`
-deamon now in autostart
+
 `sudo reboot`
-after reboot press mid button again to activate again, "1" LED should light up after a few seconds
-to see if present and to get device number
+
+after reboot press mid button again to activate again, "1" LED should light up after a few seconds.
+
+To check if the controller is present and to get device number type:
+
 `ls /dev/input/js*`
-to test connection, get axis and button numbering
+
+To test the connection, get axis and button numbering and so on:
+
 `jstest /dev/input/js0`
 
 	
