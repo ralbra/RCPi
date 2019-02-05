@@ -13,6 +13,8 @@ Install some stuff:
 `sudo apt-get -y install bluez bluez-cups bluez-hcidump bluez-tools bluez-firmware checkinstall libusb-dev libbluetooth-dev`
 
 `sudo apt-get install git joystick pkg-config`
+
+`sudo apt-get -y install python-pygame`
 ## 1. Connect PS3 Controller
 
 Firstly we need a tool tool to pair the controller:
@@ -93,7 +95,6 @@ sudo make install
 
 ## 3. Programming
 
-`sudo apt-get -y install python-pygame`
 You always have to make sure pigpiod service runs before starting up the code. Start rcpi like any other Python program.
 ```
 sudo pigpiod
