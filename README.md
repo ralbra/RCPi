@@ -8,6 +8,7 @@ I Assume u are on the latest version of raspbian (stretch atm)
 I recommend using the raspbian stretch lite version
 
 Install some stuff:
+`sudo apt-get update`
 `sudo apt-get -y install bluez bluez-cups bluez-hcidump bluez-tools bluez-firmware checkinstall libusb-dev libbluetooth-dev`
 
 `sudo apt-get install git joystick pkg-config`
